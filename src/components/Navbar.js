@@ -11,21 +11,21 @@ const Navbar = () => {
 
             <ul className="nav">
                 <li className="nav-item">
-                    <a className="nav-link text-white" href="/">Home</a>
+                    <a className="nav-link text-white" href="/">Inicio</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link text-white" href="/tutorials">
-                        Tutorials
+                    <a className="nav-link text-white" href="/nuevos">
+                        Nuevos habitos
                     </a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link text-white" href="/about">
-                        About
+                    <a className="nav-link text-white" href="/calendario">
+                        Calendario
                     </a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link text-white" href="/contact">
-                        Contact
+                    <a className="nav-link text-white" href="/habitos">
+                        Habitos
                     </a>
                 </li>
             </ul>
