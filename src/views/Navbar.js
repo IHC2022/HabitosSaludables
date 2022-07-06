@@ -3,12 +3,12 @@ import NavbarTemplate  from '../components/Navbar'
 
 
 function Navbar() {
+    
     return (
 
         <div>
             
             <NavbarTemplate />
-                      
         </div>
     )
 }
