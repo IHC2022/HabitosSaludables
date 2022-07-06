@@ -2,8 +2,8 @@ import React from 'react'
 import HabitsTemplate  from '../components/Habits'
 
 
-function Habits() {
-    let [calendarDate, setCalendarDate] = React.useState(new Date());
+function Habits({calendarDate}) {
+    
     return (
 
         <div>

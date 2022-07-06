@@ -2,8 +2,8 @@ import React from 'react'
 import CalendarTemplate  from '../components/Calendar'
 
 
-function Calendar() {
-    let [calendarDate, setCalendarDate] = React.useState(new Date());
+function Calendar({calendarDate,setCalendarDate}) {
+    
     return (
 
         <div>

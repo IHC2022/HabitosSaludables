@@ -1,6 +1,13 @@
 import * as React from 'react';
 import { Outlet, Link } from "react-router-dom";
 
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import Habits from './views/Habits';
+import CreateHabitForm from './views/CreateHabitForm';
+import Calendar from './views/Calendar';
+import Navbar from './views/Navbar';
+import Tabs from './views/Tabs';
+
 // import './App.css'
 
 
@@ -12,22 +19,24 @@ const App = () => {
   let [calendarDate, setCalendarDate] = React.useState(new Date());
 
   return (
+    
 
-    <div className="App">
-    <h1>Bookkeeper</h1>
-    <nav
-      style={{
-        borderBottom: "solid 1px",
-        paddingBottom: "1rem",
-      }}
-    >
-      <Link to="/">Inicio</Link> |{" "}
-      <Link to="/nuevos">Nuevos Habitos</Link>|{" "}
-      <Link to="/calendario">Calendario</Link>|{" "}
-      <Link to="/habitos">Habitos</Link>
-    </nav>
-    <Outlet />
-  </div>
+  
+
+    
+
+    <Router> 
+    <Navbar/>
+    
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="nuevos" element={<CreateHabitForm />} />
+      <Route path="calendario" element={<Calendar calendarDate={calendarDate} setCalendarDate={setCalendarDate}/>} />
+      <Route path="habitos" element={<Habits calendarDate={calendarDate}/>} />
+
+    </Routes>
+
+    </Router> 
   );
 };
 export default App;
