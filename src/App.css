@@ -1,9 +1,10 @@
 .App{
-    background-color: #043b71;
+    background-color: rgb(34, 210, 222);
 
 } 
 html {
     box-sizing: border-box;
+    background-color: #69849f;
 }
 
   *, *::before, *::after {

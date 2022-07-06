@@ -13,10 +13,11 @@ import Tabs from './views/Tabs';
 
 const App = () => {
   let [calendarDate, setCalendarDate] = React.useState(new Date());
+  let [habits, setHabit] = React.useState([]);
   let navigate = new useNavigate();
   //console.log(recognition); f12 onnend
   
-    //recognition.start();
+    // recognition.start();
 
     recognition.onresult = (event)=>{
       //console.log(event);
@@ -53,10 +54,10 @@ const App = () => {
       
       <Navbar/>
       <Routes>
-        <Route exact activeClassName="current" path="/" element={<App />} />
+        
         <Route exact activeClassName="current" path="nuevos" element={<CreateHabitForm />} />
         <Route exact activeClassName="current" path="calendario" element={<Calendar calendarDate={calendarDate} setCalendarDate={setCalendarDate}/>} />
-        <Route exact activeClassName="current" path="lista" element={<Habits calendarDate={calendarDate}/>} />
+        <Route path="lista" element={<Habits calendarDate={calendarDate} habitos={habits}  funHabitos={setHabit}/>} />
 
       </Routes>
 

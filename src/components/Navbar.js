@@ -18,7 +18,7 @@ const Navbar = () => {
 
             <ul className="nav">
                 <li className="nav-item">
-                    <a className="nav-link text-white" href="/">Inicio</a>
+                    <a className="nav-link text-white" href="/inicio">Inicio</a>
                 </li>
                 <li className="nav-item ">
                     <NavLink to="/nuevos">

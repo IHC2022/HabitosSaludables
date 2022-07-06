@@ -2,13 +2,13 @@ import React from 'react'
 import HabitsTemplate  from '../components/Habits'
 
 
-function Habits({calendarDate}) {
+function Habits({calendarDate, habitos,funHabitos}) {
     
     return (
 
         <div>
             
-            <HabitsTemplate calendarDate={calendarDate}/>
+            <HabitsTemplate calendarDate={calendarDate} habits={habitos} setHabits={funHabitos} />
                       
         </div>
     )

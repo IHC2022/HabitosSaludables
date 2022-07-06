@@ -10,6 +10,7 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import Button from '@mui/material/Button';
+import {addHabitos, getHabitos} from './data'
 
 export default function CreateHabitForm() {
   const [name, setName] = React.useState("");
@@ -18,22 +19,26 @@ export default function CreateHabitForm() {
 
   const handleSubmit = () => {
     setAlert({ message: null, type: null})
-    axios
-      .post('http://localhost:1337/api/habits', {
-        data: {
-          name,
-          type
-        }
-      })
-      .then((response) => {
-        setName("")
-        setType("")
-        setAlert({ message: 'Habit created', type: 'success'})
-      })
-      .catch((error) => {
-        console.log(error);
-        setAlert({ message: 'An error occurred', type: 'error'})
-      });
+    let temp = {id:((getHabitos()).length+1).toString(),name:name,completed:false, type :type,calendarDate:"2022-07-06"}
+  //   axios
+  //     .post('http://localhost:1337/api/habits', {
+  //       data: {
+  //         name,
+  //         type
+  //       }
+  //     })
+  //     .then((response) => {
+  //       setName("")
+  //       setType("")
+  //       setAlert({ message: 'Habit created', type: 'success'})
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //       setAlert({ message: 'An error occurred', type: 'error'})
+  //     });
+    addHabitos(temp);
+    setAlert({ message: 'Habit created', type: 'success'})
+    console.log(getHabitos());
   }
   return(
     <Grid container spacing={2} direction="column">

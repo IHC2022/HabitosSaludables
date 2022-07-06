@@ -1,7 +1,7 @@
 import * as React from 'react';
 import axios from "axios";
 import * as qs from 'qs'
-import { format } from 'date-fns';
+import { format, getDate } from 'date-fns';
 
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
@@ -13,57 +13,47 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 
 import Checkbox from '@mui/material/Checkbox';
-
-export default function Habits({type, calendarDate}) {
+import {addHabitos, getHabitos,modHabitos} from './data'
+export default function Habits({type, calendarDate, habits, setHabits}) {
+  const [value,setValue] = React.useState(false)
   
-  const hb2=[
-    {id:"1",name:"Correr",completed:true, type:"morning",calendarDate:"2022-07-06"},
-    {id:"2",name:"Estudiar inglés",completed:false, type :"afternoon",calendarDate:"2022-07-05"},
-    {id:"3",name:"Estudiar francés",completed:false, type :"evening",calendarDate:"2022-07-06"}
-  ];
-  const [habits, setHabits] = React.useState(hb2);
+  // const hb2=[
+  //   {id:"1",name:"Correr",completed:true, type:"morning",calendarDate:"2022-07-06"},
+  //   {id:"2",name:"Estudiar inglés",completed:false, type :"afternoon",calendarDate:"2022-07-05"},
+  //   {id:"3",name:"Estudiar francés",completed:false, type :"evening",calendarDate:"2022-07-06"}
+  // ];
+  // const [habits, setHabits] = React.useState([]);
 
   React.useEffect(() => {
-    completeHabit
-  }, [])
+    fetchData();
+  }, [calendarDate])
 
-  const arrayObjUpdater = (habitId) => {
-    let hb3=habits;
-    hb3.map((habit)=>{
-      if (habit.id==habitId){
-        habit.completed= !habit.completed
-      }
-    });
-
-   
-    console.log(hb3); // See output below
-    setHabits(hb3)
-    
-  }
+  
+  
   
   
   const fetchData = () => {
+    let temp = getHabitos();
     // axios.get(`http://localhost:1337/api/get-habits-with-logs?calendarDate=${format(calendarDate, "yyyy-MM-dd")}&type=${type}`)
     // .then((response) =>{
-    //   setHabits(response.data)
+      setHabits(temp)
+    console.log("ENRE")
     // })
     // .catch((error) => console.log(error))
   }
- var cont=1;
 
-  function completeHabit (habitId,setValue) {
-    console.log("HOLA");
-    hb2.map((habit)=>{
-      if (habit.id===habitId){
-        
-        console.log("HOLA2222222222222222222222222222222222222");
-        habit.completed = !habit.completed
-        setValue(habit.completed);
-        
-        
-        console.log(habit.completed);
-      };
-    });
+
+  const  completeHabit= (habitId)=>()=> {
+  //  modHabitos(habitId)
+    habits[parseInt(habitId)-1].completed= !habits[parseInt(habitId)-1].completed;
+    setValue(habits[parseInt(habitId)-1].completed)
+    console.log("ADIOS")
+    console.log(parseInt(habitId))
+    setHabits(habits)
+    // modHabitos(habits)
+    fetchData()
+    console.log(value)
+    
     // axios
     //   .post('http://localhost:1337/api/habit-logs', {
     //     data: {
@@ -77,7 +67,7 @@ export default function Habits({type, calendarDate}) {
     //   .catch((error) => {
     //     console.log(error);
     //   });
-    console.log(hb2);
+    
   };
  
   
@@ -104,11 +94,11 @@ export default function Habits({type, calendarDate}) {
             key={id}
             disablePadding
           >
-            <ListItemButton role={undefined} onClick={()=>arrayObjUpdater (id)} dense>
+            <ListItemButton role={undefined} onClick={completeHabit(id)} dense>
               <ListItemIcon>
                 <Checkbox
                   edge="start"
-                  checked={completed}
+                  checked={value}
                   tabIndex={-1}
                   disableRipple
                   inputProps={{ 'aria-labelledby': labelId }}
