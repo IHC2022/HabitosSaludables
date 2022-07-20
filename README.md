@@ -1,55 +1,28 @@
-# Habit Tracker
+# Hábitos saludables
 
-### Features and Stack
+Este proyecto consiste en una aplicación para darle seguimiento e incorporar hábitos saludables.
 
-### Features
-* create an account with using email and password
-* authenticate using Facebook, GitHub or Google
-* login as a guest
-* add, edit and delete habits
-* mark the habits as `completed`, `failed` or `skipped`
-* weekly performance is visualized in a bar chart
-* brief summary of performance for last week, current week, current day and all time
-* customize the app by changing `primary` and `secondary` color
-* toggle dark mode
-* choose your language: `ES | EN | PL`
-
-### Stack
-
-* React
-* React Query
-* React Router
-* React Hook Form
-* Material UI
-* Firebase
-  * Authentication
-  * Realtime Database
-
-
-```bash
-
-# Install dependencies
+# Instalar dependencias
 
 yarn
 
 ```
 
-### Connect Firebase
+### Conectar a Firebase
 
-While you’re waiting for the dependencies to install, you can set up the Firebase.
 
-1. Login to [Firebase](https://console.firebase.google.com/)
-2. Create project
-3. Create Realtime Database
-   1. In step 2, check “Start in **test mode”**
-4. Authentication > Sign-in method > Sign-in providers, and add the following:
+1. Loguear en [Firebase](https://console.firebase.google.com/)
+2. Crear un proyecto
+3. Crear una Realtime Database
+   1. En el paso 2, check “Empezar en **test mode”**
+4. Authentication > Sign-in method > Sign-in providers, agregar lo siguiente:
    1. Email/Password
    2. Google
    3. Anonymous
-   4. (Optional): If you want to add Facebook and/or GitHub, you’ll have to get Client IDs and secrets from these services
-5. Go to Project Overview and add a web app
-6. You don’t need to run `npm install firebase`, it’s already installed
-7. You should see a `firebaseConfig` similar to this:
+   4. (Optional): Si se quiere agregar Facebook y/o GitHub, los ids de clientes y los secretors de dichos servicios deber ser proporcionados
+5. Agregar web-app al proyecto
+6. No es necesario correr `npm install firebase`
+7. En .env.local configurar lo siguiente de acuerdo a los datos que nos proporciona firebase en configuarción.
 
     ```bash
     const firebaseConfig = {
@@ -64,54 +37,14 @@ While you’re waiting for the dependencies to install, you can set up the Fireb
     };
     ```
 
-8. Create `.env.local` file, by duplicating `.env.local.example`, and use config above to fill it out
 
-### Start the app
+### Inicializar la app
 
 ```bash
-# Start development server
+# Iniciar desarrollo
 yarn start
 ```
-The app should be running at: [http://localhost:3000](http://localhost:3000/)
+La app corre en: [http://localhost:3000](http://localhost:3000/)
 
-### Database and data structure
 
-How should I store habit's completion state for each day? Should each habit have an array with the dates 
-when it was performed or should I store dates and each date would keep track of the habits that where performed on that day? 
-
-```json
-{
-    "habits": {
-        "user-one": {
-            "habit-one": {
-                "name": "Reading",
-                "description": "Read a book for at least 30 min in the morning",
-                "frequency": [0,1,2,3,4]
-            }
-        }
-    },
-    "checkmarks": {
-        "user-one": {
-            "checkmark-id": {
-                "habitId": "habit-one",
-                "date": "2020-11-11",
-                "value": "completed"
-            }
-        }
-    },
-    "users": {
-        "user-one": {
-            "locale": {
-                "code": "en-GB"
-            },
-            "theme": {
-                "primaryColor": "blue",
-                "secondaryColor": "red",
-                "dark": true
-            },
-            "performanceGoal": 80
-        }
-    }
-}
-```
 
