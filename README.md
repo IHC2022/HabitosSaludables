@@ -46,6 +46,12 @@ yarn start
 ```
 La app corre en: [http://localhost:3000](http://localhost:3000/)
 
+# Despliegue
 
+- Se está usando un servidor como servicio de nube de DigitalOcean
+- El servidor web que usamos es Nginx configurado por bloques para admitir más dominios
+- Para los certificados estamos usando Certbot ssl-encrypted security
+- El sistema operativo es Ubuntu-server 22.04
+- El dominio es uno que teníamos como grupo y lo apuntamos al servidor de DigitalOcean
 
-
+Link del despliegue: https://dev.magrito.io/
