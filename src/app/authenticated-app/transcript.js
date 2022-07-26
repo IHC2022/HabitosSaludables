@@ -38,7 +38,7 @@ function Texto() {
 
   return (
     <div>
-    <p className={classes.text} id="Comando voz">Comando : {transcript}</p>
+    <p className={classes.text} id="Comando voz"><b> Comando :</b> {transcript}</p>
     </div>
   );
 }
