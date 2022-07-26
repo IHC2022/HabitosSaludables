@@ -10,6 +10,7 @@ import {
 } from '@material-ui/core';
 import { useDrawer } from './drawer-context';
 
+
 const DRAWER_WIDTH = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -54,6 +55,7 @@ function Drawer({ children }) {
           {children}
         </MuiDrawer>
       </Hidden>
+      
 
       {/* Desktop screens */}
       <Hidden lgDown implementation="js">
@@ -67,6 +69,7 @@ function Drawer({ children }) {
           {children}
         </MuiDrawer>
       </Hidden>
+    
     </>
   );
 }

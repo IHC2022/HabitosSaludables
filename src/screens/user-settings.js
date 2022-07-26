@@ -14,17 +14,17 @@ import { useTranslation } from 'translations';
 // Translations
 const translations = {
   account: {
-    
+    pl: 'Konto',
     es: 'Cuenta',
     en: 'Account',
   },
   performance: {
-    
+    pl: 'Wyniki',
     es: 'Resultados',
     en: 'Performance',
   },
   appearance: {
-    
+    pl: 'Motyw',
     es: 'Tema',
     en: 'Appearance',
   },

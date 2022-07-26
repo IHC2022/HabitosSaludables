@@ -258,7 +258,7 @@ const translations = {
   },
   manageHabits: {
     
-    es: 'Editar hábitos',
+    es: 'Mis hábitos',
     en: 'Manage habits',
   },
 
@@ -346,7 +346,7 @@ const translations = {
    */
   landingQuoteFirstLine: {
     
-    es: 'No hay nada que no puedas hacer,',
+    es: 'No hay nada que puedas hacer,',
     en: 'Transform your life,',
   },
   landingQuoteSecondLine: {

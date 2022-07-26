@@ -22,7 +22,7 @@ import { UserSettingsScreen } from 'screens/user-settings';
 
 import { FullPageErrorFallback, ErrorFallback } from 'components/lib';
 import { LocaleSelect } from 'components/locale-select';
-import { GithubRepoLink } from 'components/github-repo-link';
+// import { GithubRepoLink } from 'components/github-repo-link';
 
 import { useTranslation } from 'translations';
 import { useAuth } from 'context/auth-context';
@@ -117,7 +117,7 @@ function AuthenticatedApp() {
         {/* Navbar */}
         <Navbar>
           <LocaleSelect onLocaleClick={handleLocaleClick} />
-          
+          {/* <GithubRepoLink color="inherit" /> */}
         </Navbar>
 
         {/* Drawer */}

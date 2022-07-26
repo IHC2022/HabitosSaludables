@@ -2,6 +2,9 @@ import * as React from 'react';
 import { AppBar, IconButton, makeStyles, Toolbar } from '@material-ui/core';
 import { Menu as MenuIcon } from '@material-ui/icons';
 import { useDrawer } from './drawer-context';
+import {Voice} from './voice-component'
+import {Texto} from './transcript'
+
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -14,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
+
 }));
 
 function Navbar({ children }) {
@@ -24,6 +28,7 @@ function Navbar({ children }) {
   return (
     <AppBar position="fixed">
       <Toolbar className={classes.toolbar}>
+        
         <IconButton
           color="inherit"
           aria-label="open drawer"
@@ -31,8 +36,11 @@ function Navbar({ children }) {
           onClick={onDrawerToggle}
           className={classes.menuButton}
         >
+          
           <MenuIcon />
         </IconButton>
+        <Texto/>
+        <Voice/>
         {children}
       </Toolbar>
     </AppBar>
