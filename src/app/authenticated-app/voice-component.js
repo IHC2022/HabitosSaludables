@@ -33,7 +33,7 @@ function Voice() {
         return
       }
 
-      if (url.includes("hábitos")) {
+      if (url.includes("lista")) {
         navigate("manage-habits")
         return
       }
