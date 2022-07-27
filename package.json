@@ -10,6 +10,8 @@
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^5.0.0-alpha.17",
     "@material-ui/styles": "^4.11.1",
+    "@material/tooltip": "^14.0.0",
+    "@mui/icons-material": "^5.8.4",
     "@nivo/bar": "^0.64.0",
     "@nivo/calendar": "^0.64.0",
     "@nivo/line": "^0.64.0",
@@ -36,6 +38,7 @@
     "react-scripts": "4.0.0",
     "react-speech-recognition": "^3.9.1",
     "react-swipeable-views": "^0.13.9",
+    "react-tooltip": "^4.2.21",
     "web-vitals": "^0.2.4",
     "yup": "^0.29.3"
   },
