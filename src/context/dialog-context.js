@@ -29,7 +29,7 @@ const DialogProvider = ({ children }) => {
   const t = useTranslation(translations);
   const [dialogs, setDialogs] = useState([]);
 
-  const openDialog = (props) => {
+    const openDialog = (props) => {
     const dialog = { ...props, open: true };
 
     setDialogs((dialogs) => [...dialogs, dialog]);
@@ -57,6 +57,7 @@ const DialogProvider = ({ children }) => {
             open,
             title,
             description,
+            btnok,
             confirmText,
             onConfirm,
             color = 'primary',
@@ -82,7 +83,7 @@ const DialogProvider = ({ children }) => {
               <Button onClick={closeDialog} color={color}>
                 {t('cancelButton')}
               </Button>
-              <Button
+              {btnok && (<Button
                 onClick={() => {
                   // Close the dialog and invoke the callback
                   closeDialog();
@@ -93,7 +94,7 @@ const DialogProvider = ({ children }) => {
                 autoFocus
               >
                 {confirmText}
-              </Button>
+              </Button>)}
             </DialogActions>
           </Dialog>
         )

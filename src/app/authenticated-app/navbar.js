@@ -2,8 +2,9 @@ import * as React from 'react';
 import { AppBar, IconButton, makeStyles, Toolbar } from '@material-ui/core';
 import { Menu as MenuIcon } from '@material-ui/icons';
 import { useDrawer } from './drawer-context';
-import {Voice} from './voice-component'
-import {Texto} from './transcript'
+import {Voice} from './voice-component';
+import {Texto} from './transcript';
+import {Info} from './info-button';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -41,7 +42,8 @@ function Navbar({ children }) {
         </IconButton>
         <Texto/>
         <Voice/>
-        {children}
+        <Info/>
+      {children}
       </Toolbar>
     </AppBar>
   );

@@ -41,6 +41,7 @@ function HabitListItem({ habit }) {
       title: `${t('deleteHabitQuestion')} "${name}"?`,
       description: t('deleteHabitWarning'),
       confirmText: t('deleteHabitConfirmation'),
+      btnok:true,
       onConfirm: () => {
         deleteHabitMutation.mutate(id, {
           onSuccess: () => openSnackbar('success', t('habitDeleted')),

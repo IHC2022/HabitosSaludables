@@ -21,6 +21,11 @@ const translations = {
     es: 'Contraseña',
     en: 'Password',
   },
+  infotext: {
+    
+    es: 'Información',
+    en: 'Information',
+  },
   passwordConfirmation: {
     
     es: 'Confirmación de contraseña',
@@ -76,13 +81,22 @@ const translations = {
     es: 'Salir?',
     en: 'Sign out?',
   },
+  info: {
+    
+    es: 'Información del comando de voz',
+    en: 'Information about voice comand',
+  },
+  infoDescription: {
+    
+    es: `Utilizar las palabras claves "Ir a", "Abrir" para acceder a los menús laterales izquierdos`,
+    en: `Use "Ir a", "Abrir" like keywords to open left menu.`,
+  },
   signOutDescription: {
     
     es: `Cuando estás desconectado, no puedes administrar tu perfil y realizar otras actividades.`,
     en: `While signed out you are unable to manage your profile and conduct other activities that require you to be signed in.`,
   },
   signOutConfirm: {
-    
     es: 'Salir',
     en: 'Sign out',
   },

@@ -87,6 +87,7 @@ function AuthenticatedApp() {
       title: t('signOutQuestion'),
       description: t('signOutDescription'),
       confirmText: t('signOutConfirm'),
+      btnok:true,
       onConfirm: async () => {
         try {
           // When signing out and user is anonymous, delete their data

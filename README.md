@@ -1,7 +1,7 @@
 # Hábitos saludables
 
 Este proyecto consiste en una aplicación para darle seguimiento e incorporar hábitos saludables.
-Comentario
+
 # Instalar dependencias
 
 yarn
